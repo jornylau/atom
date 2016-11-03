@@ -31,11 +31,11 @@ test_script:
 
 deploy: off
 artifacts:
-  - path: out\AtomSetup.exe
+  - path: out\AtomSetup*.exe
     name: AtomSetup.exe
-  - path: out\AtomSetup.msi
+  - path: out\AtomSetup*.msi
     name: AtomSetup.msi
-  - path: out\atom-windows.zip
+  - path: out\atom-windows*.zip
     name: atom-windows.zip
   - path: out\RELEASES
     name: RELEASES

@@ -169,6 +169,9 @@ function renamePackagedAppDir (packageOutputDirPath) {
   } else {
     const appName = CONFIG.channel === 'beta' ? 'Atom Beta' : 'Atom'
     packagedAppPath = path.join(CONFIG.buildOutputPath, appName)
+    if (process.platform === 'win32' && process.arch !== 'ia32') {
+      packagedAppPath += ` ${process.arch}`
+    }
     if (fs.existsSync(packagedAppPath)) fs.removeSync(packagedAppPath)
     fs.renameSync(packageOutputDirPath, packagedAppPath)
   }
